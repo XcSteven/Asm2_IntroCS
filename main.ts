@@ -1,6 +1,6 @@
 input.onSound(DetectedSound.Loud, function () {
     led.plot(2, 2)
-    basic.pause(500)
+    basic.pause(100)
     led.unplot(2, 2)
     basic.showLeds(`
         . . . . .
@@ -9,4 +9,15 @@ input.onSound(DetectedSound.Loud, function () {
         . # # # .
         . . . . .
         `)
+    basic.pause(100)
+    basic.clearScreen()
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.clearScreen()
 })
