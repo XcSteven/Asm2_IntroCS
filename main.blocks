@@ -1,1 +1,7 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="device_forever" id="O^gN?RD5i~St.+=(D^``" x="0" y="0"/></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="input_on_sound" id=",}kJXJ!o8y,l4)3dEH!I" x="87" y="69"><field name="sound">DetectedSound.Loud</field><statement name="HANDLER"><block type="device_plot" id="6-;c[6+=w+Ql?i**g}|T"><value name="x"><shadow type="math_number_minmax" id="IOyiz:(^j0o1.4j8D(!z"><mutation min="0" max="4" label="X" precision="1"/><field name="SLIDER">2</field></shadow></value><value name="y"><shadow type="math_number_minmax" id="m[=nb~j,XJ?TuIkEO|+h"><mutation min="0" max="4" label="Y" precision="1"/><field name="SLIDER">2</field></shadow></value><next><block type="device_pause" id="HKgt]I9EUZ8zc_L#|,Ru"><value name="pause"><shadow type="timePicker" id="%=0PKSpke6TAuQNcK`P%"><field name="ms">500</field></shadow></value><next><block type="device_unplot" id=":#%HZH)R~`w*zn-x0b(m"><value name="x"><shadow type="math_number_minmax" id="RE.p12B9h5W!yNddf:IT"><mutation min="0" max="4" label="X" precision="1"/><field name="SLIDER">2</field></shadow></value><value name="y"><shadow type="math_number_minmax" id="T4k%}x`]j.}UQmVFAWux"><mutation min="0" max="4" label="Y" precision="1"/><field name="SLIDER">2</field></shadow></value><next><block type="device_show_leds" id="vGxl=@}48NMXGpPEPGFa"><field name="LEDS">`
+        . . . . . 
+        . # # # . 
+        . # . # . 
+        . # # # . 
+        . . . . .
+        `</field></block></next></block></next></block></next></block></statement></block></xml>
