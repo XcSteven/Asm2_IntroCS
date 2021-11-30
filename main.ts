@@ -14,7 +14,7 @@ basic.forever(function () {
     fruit.set(LedSpriteProperty.Brightness, 120)
     if (game.score() < 20) {
         for (let index = 0; index < 5; index++) {
-            basic.pause(450)
+            basic.pause(500)
             fruit.change(LedSpriteProperty.Y, 1)
             if (fruit.isTouching(basket)) {
                 game.addScore(1)
@@ -23,7 +23,16 @@ basic.forever(function () {
         }
     } else if (game.score() < 50) {
         for (let index = 0; index < 5; index++) {
-            basic.pause(350)
+            basic.pause(400)
+            fruit.change(LedSpriteProperty.Y, 1)
+            if (fruit.isTouching(basket)) {
+                game.addScore(1)
+                fruit.delete()
+            }
+        }
+    } else if (game.score() < 100) {
+        for (let index = 0; index < 5; index++) {
+            basic.pause(300)
             fruit.change(LedSpriteProperty.Y, 1)
             if (fruit.isTouching(basket)) {
                 game.addScore(1)
@@ -32,7 +41,7 @@ basic.forever(function () {
         }
     } else {
         for (let index = 0; index < 5; index++) {
-            basic.pause(250)
+            basic.pause(200)
             fruit.change(LedSpriteProperty.Y, 1)
             if (fruit.isTouching(basket)) {
                 game.addScore(1)
