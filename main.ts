@@ -1,12 +1,7 @@
-input.onButtonPressed(Button.A, function () {
-    basket.change(LedSpriteProperty.X, -1)
-})
-input.onButtonPressed(Button.B, function () {
-    basket.change(LedSpriteProperty.X, 1)
-})
 let fruit: game.LedSprite = null
-let basket: game.LedSprite = null
-basket = game.createSprite(2, 4)
+let basket = game.createSprite(2, 4)
+let pause2 = 200
+let sensitivity = 400
 game.setScore(0)
 game.setLife(3)
 music.playMelody("E B C5 A B G A F ", 275)
@@ -61,4 +56,35 @@ basic.forever(function () {
         game.removeLife(1)
     }
     fruit.delete()
+})
+basic.forever(function () {
+    if (input.acceleration(Dimension.X) > sensitivity) {
+        if (basket.get(LedSpriteProperty.X) < 4) {
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basket.change(LedSpriteProperty.X, 1)
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basic.pause(pause2)
+        }
+    } else if (input.acceleration(Dimension.X) < 0 - sensitivity) {
+        if (basket.get(LedSpriteProperty.X) > 0) {
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basket.change(LedSpriteProperty.X, -1)
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basic.pause(pause2)
+        }
+    } else if (input.acceleration(Dimension.Y) > sensitivity) {
+        if (basket.get(LedSpriteProperty.Y) < 4) {
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basket.change(LedSpriteProperty.Y, 1)
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basic.pause(pause2)
+        }
+    } else if (input.acceleration(Dimension.Y) < 0 - sensitivity) {
+        if (basket.get(LedSpriteProperty.Y) > 0) {
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basket.change(LedSpriteProperty.Y, -1)
+            led.toggle(basket.get(LedSpriteProperty.X), basket.get(LedSpriteProperty.Y))
+            basic.pause(pause2)
+        }
+    }
 })
